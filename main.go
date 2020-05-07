@@ -26,10 +26,11 @@ func main() {
 	}
 	defer f.Close()
 
-	buf := make([]byte, 4096)
 	dec := charmap.CodePage437.NewDecoder()
 
 	for {
+		buf := make([]byte, 4096)
+
 		n, err := f.Read(buf)
 		if err != nil {
 			if err == io.EOF {
