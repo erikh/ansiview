@@ -14,17 +14,28 @@ func errExit(msg string) {
 }
 
 func main() {
-	if len(os.Args) != 2 {
+	var f *os.File
+
+	switch len(os.Args) {
+	case 1:
+		f = os.Stdin
+	case 2:
+		filename := os.Args[1]
+		switch filename {
+		case "-h", "-help", "--help":
+			errExit("usage: ansiview <filename>")
+		default:
+		}
+
+		var err error
+		f, err = os.Open(filename)
+		if err != nil {
+			errExit(err.Error())
+		}
+		defer f.Close()
+	default:
 		errExit("invalid arguments")
 	}
-
-	filename := os.Args[1]
-
-	f, err := os.Open(filename)
-	if err != nil {
-		errExit(err.Error())
-	}
-	defer f.Close()
 
 	dec := charmap.CodePage437.NewDecoder()
 
