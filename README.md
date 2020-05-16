@@ -12,6 +12,8 @@ or some similar variation on it in your UTF-8-compatible terminal:
 for i in *.ANS; do clear; ansiview $i; echo $i; read; done
 ```
 
+Then you can walk through the whole directory; hit enter to cycle to the next file.
+
 ## Pretty
 
 ![](spawn.png)
