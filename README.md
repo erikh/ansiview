@@ -22,6 +22,12 @@ UTF-8 compatible, minimum 16 color terminal. Your terminal should be at least
 `80x25` to see most artwork, however you may benefit from much taller heights
 and sometimes width; `130x75` is great.
 
+## Installation
+
+```bash
+$ go get github.com/erikh/ansiview
+```
+
 ## Author
 
 Erik Hollensbe <erik+git@hollensbe.org>, but most of the work was really done
