@@ -14,7 +14,7 @@ for i in *.ANS; do clear; ansiview $i; echo $i; read; done
 
 ## Pretty
 
-<img src="spawn.png" />
+![](spawn.png)
 
 ## Requirements
 
